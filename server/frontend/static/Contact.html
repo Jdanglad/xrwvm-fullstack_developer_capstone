@@ -6,24 +6,25 @@
   <link rel="stylesheet" href="/static/style.css">
   <link rel="stylesheet" href="/static/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="/static/script.js"></script>
 </head>
 <div class="background">
   <nav class="bar navbar navbar-expand-lg navbar-light text-white" style="background-color:darkturquoise; height: 1in;">
     <div class="container-fluid">
-      <h2 style="padding-right: 5%;">Dealerships</h2>
+      <h2 style="padding-right: 5%;" href="/"><a class="nav-link text-white" href="/">Charons Tour</a></h2>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link text-secondary" style="font-size: larger;" aria-current="page" href="/">Home</a>
+            <a class="nav-link text-secondary" style="font-size: larger;" href="/">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-secondary" style="font-size: larger;" href="/about">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-white" style="font-size: larger;" href="/contact">Contact Us</a>
+            <a class="nav-link active text-white" style="font-size: larger;" aria-current="page" href="/contact">Contact Us</a>
           </li>
         </ul>
       </div>
@@ -33,32 +34,32 @@
   <div class="card" style="width: 85%;margin: auto; margin-top:2.3%;">
     <div style="display: flex;flex-direction: row; margin:auto; margin-top:4%;">
     <div class="card" style="width: 30%;">
-      <img class="card-img-top" src="https://img.freepik.com/vector-gratis/espacio-coworking-dibujado-mano_52683-54823.jpg" alt="Card image">
+      <img class="card-img-top" src="https://img.freepik.com/vector-gratis/espacio-coworking-dibujado-mano_52683-54823.jpg" alt="Card image" height="35%" width="50%">
       <div class="card-body">
         <p class="title badge p-3 wrapt-text" style="background-color:#446B4A; width: 85%;">Dealerships Offices</p>
-        <p>Jessica M.</p>
-        <p class="card-text">The beautiful and charismatic Jessica will provide a heartwarming welcome and bring solutions in the most professional way.</p>
-        <p>jessm@example.com</p>
+        <p>Looking for options?</p>
+        <p class="card-text">Our customer service will assure you the best experience while searching for the best options in our stock!</p>
+        <a class="btn btn-outline-dark wrapt-text" id="offices" onclick="copyToClipboard('offices')">312-611-1111</a>
       </div>
     </div>
 
     <div class="card" style="width: 30%;">
-      <img class="card-img-top" src="https://st.depositphotos.com/1062085/4412/v/450/depositphotos_44126603-stock-illustration-social-media-marketing-flat-illustration.jpg" alt="Card image">
+      <img class="card-img-top" src="https://st.depositphotos.com/1062085/4412/v/450/depositphotos_44126603-stock-illustration-social-media-marketing-flat-illustration.jpg" alt="Card image" height="35%" width="50%">
       <div class="card-body">
         <p class="title badge p-3 wrapt-text" style="background-color:#446B4A; width: 85%;">National Advertising Team</p>
-        <p>James P.</p>
-        <p class="card-text">Counts with expertise and extense knowledge. He brings options to fit your needs.</p>
-        <p>jamesp@example.com</p>
+        <p>Working in projects?</p>
+        <p class="card-text">Our marketing team is open to possible cooperation with different brands and projects, let us know your ideas!</p>
+        <a class="btn btn-outline-dark wrapt-text" id="marketing" onclick="copyToClipboard('marketing')">marketing@Charonstour.com</a>
       </div>
     </div>
 
     <div class="card" style="width: 30%;">
-      <img class="card-img-top" src="https://www.ltvplus.com/wp-content/uploads/2019/06/Good-Customer-Service-featured.png" alt="Card image">
+      <img class="card-img-top" src="https://www.ltvplus.com/wp-content/uploads/2019/06/Good-Customer-Service-featured.png" alt="Card image" height="35%" width="50%">
       <div class="card-body">
         <p class="title badge p-3 wrapt-text" style="background-color:#446B4A; width: 85%;">Customer Support</p>
-        <p>Anthony L.</p>
-        <p class="card-text">Will provide a professional atention, as He counts with over 30 years of experience.</p>
-        <p>anthonyl@example.com</p>
+        <p>Trouble with our services?</p>
+        <p class="card-text">Contact us if you experience any issues with our services, you'll be greeted by our experienced and trained team!</p>
+        <a class="btn btn-outline-dark wrapt-text" id="support" onclick="copyToClipboard('support')">support@Charonstour.com</a>
       </div>
     </div>
   </div>
