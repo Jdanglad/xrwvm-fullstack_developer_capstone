@@ -43,27 +43,24 @@ const Login = ({ onClose }) => {
   return (
     <div class="background" style={{display:"flex", flexDirection:"column"}}>
       <Header/>
-    <div class="card" style={{width: "85%",margin: "auto", marginTop:"2.3%", marginBottom:"50%"}} onClick={onClose}>
-      <div
+    <div class="card" style={{width: "30%",margin: "auto", marginTop:"5%", marginBottom:"50%"}} onClick={onClose}>
+      <div style={{margin:"10%"}}
         onClick={(e) => {
           e.stopPropagation();
         }}
         className='modalContainer'
       >
           <form className="login_panel" style={{}} onSubmit={login}>
+            <div class="d-flex justify-content-evenly flex-wrap">
+              <input type="text" name="username" class="form-control mb-4 p-2" style={{width:"3in"}} placeholder="Username" onChange={(e) => setUserName(e.target.value)}/>
+              <input name="psw" type="password" class="form-control mb-3 p-2" style={{width:"3in"}} placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>            
+            </div>
               <div>
-              <span className="input_field">Username </span>
-              <input type="text"  name="username" placeholder="Username" className="input_field" onChange={(e) => setUserName(e.target.value)}/>
+              <input className="action_button" class="btn btn-dark text-white wrapt-text" style={{width:"3in",marginTop:"5%", marginBottom:"5%"}} type="submit" value="Login"/>
               </div>
               <div>
-              <span className="input_field">Password </span>
-              <input name="psw" type="password"  placeholder="Password" className="input_field" onChange={(e) => setPassword(e.target.value)}/>            
+              <a className="loginlink" class="btn btn-dark text-white wrapt-text" style={{width:"3in"}} href="/register">Register Now</a>
               </div>
-              <div>
-              <input className="action_button" type="submit" value="Login"/>
-              <input className="action_button" type="button" value="Cancel" onClick={()=>setOpen(false)}/>
-              </div>
-              <a className="loginlink" href="/register">Register Now</a>
           </form>
       </div>
     </div>
