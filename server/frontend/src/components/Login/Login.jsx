@@ -41,9 +41,9 @@ const Login = ({ onClose }) => {
   
 
   return (
-    <div>
+    <div class="background" style={{display:"flex", flexDirection:"column"}}>
       <Header/>
-    <div onClick={onClose}>
+    <div class="card" style={{width: "85%",margin: "auto", marginTop:"2.3%", marginBottom:"50%"}} onClick={onClose}>
       <div
         onClick={(e) => {
           e.stopPropagation();
