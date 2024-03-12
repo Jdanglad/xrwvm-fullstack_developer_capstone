@@ -1,6 +1,7 @@
 
 import React, { useState } from "react";
 import "./Register.css";
+import Header from '../Header/Header';
 import user_icon from "../assets/person.png"
 import email_icon from "../assets/email.png"
 import password_icon from "../assets/password.png"
@@ -50,8 +51,10 @@ const Register = () => {
 };
 
   return(
-    <div className="register_container" style={{width: "50%"}}>
-      <div className="header" style={{display: "flex",flexDirection: "row", justifyContent: "space-between"}}>
+    <div className="background" style={{display:"flex", flexDirection:"column"}}>
+      <Header/>
+    <div className="register_container card" style={{width: "50%"}}>
+        <div className="header" style={{display: "flex",flexDirection: "row", justifyContent: "space-between"}}>
           <span className="text" style={{flexGrow:"1"}}>SignUp</span> 
           <div style={{display: "flex",flexDirection: "row", justifySelf: "end", alignSelf: "start" }}>
           <a href="/" onClick={()=>{gohome()}} style={{justifyContent: "space-between", alignItems:"flex-end"}}>
@@ -92,6 +95,7 @@ const Register = () => {
           <input className="submit" type="submit" value="Register"/>
         </div>
       </form>
+      </div>
       </div>
   )
 }
