@@ -144,4 +144,4 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'frontend/build/static'),
 ]
 ALLOWED_HOSTS=['localhost','https://dangladjose-8000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai']
-CSRF_TRUSTED_ORIGINS=['https://dangladjose-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai']
+CSRF_TRUSTED_ORIGINS=['https://dangladjose-8000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai']

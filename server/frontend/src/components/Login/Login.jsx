@@ -43,7 +43,7 @@ const Login = ({ onClose }) => {
   return (
     <div class="background" style={{display:"flex", flexDirection:"column"}}>
       <Header/>
-    <div class="card" style={{width: "30%",margin: "auto", marginTop:"5%", marginBottom:"50%"}} onClick={onClose}>
+    <div class="card" style={{width: "50vw",margin: "auto", marginTop:"5%", marginBottom:"10%"}} onClick={onClose}>
       <div style={{margin:"10%"}}
         onClick={(e) => {
           e.stopPropagation();
@@ -51,15 +51,15 @@ const Login = ({ onClose }) => {
         className='modalContainer'
       >
           <form className="login_panel" style={{}} onSubmit={login}>
-            <div class="d-flex justify-content-evenly flex-wrap">
-              <input type="text" name="username" class="form-control mb-4 p-2" style={{width:"3in"}} placeholder="Username" onChange={(e) => setUserName(e.target.value)}/>
-              <input name="psw" type="password" class="form-control mb-3 p-2" style={{width:"3in"}} placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>            
+            <div class="d-flex justify-content-evenly flex-wrap" style={{width:""}}>
+              <input type="text" name="username" class="form-control mb-4 p-2" style={{width:"35vw"}} placeholder="Username" onChange={(e) => setUserName(e.target.value)}/>
+              <input name="psw" type="password" class="form-control mb-3 p-2" style={{width:"35vw"}} placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>            
             </div>
               <div>
-              <input className="action_button" class="btn btn-dark text-white wrapt-text" style={{width:"3in",marginTop:"5%", marginBottom:"5%"}} type="submit" value="Login"/>
+              <input className="action_button" class="btn btn-dark text-white wrapt-text" style={{width:"35vw",marginTop:"5%", marginBottom:"5%"}} type="submit" value="Login"/>
               </div>
               <div>
-              <a className="loginlink" class="btn btn-dark text-white wrapt-text" style={{width:"3in"}} href="/register">Register Now</a>
+              <a className="loginlink" class="btn btn-dark text-white wrapt-text" style={{width:"35vw"}} href="/register">Register Now</a>
               </div>
           </form>
       </div>

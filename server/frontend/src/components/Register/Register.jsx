@@ -51,9 +51,9 @@ const Register = () => {
 };
 
   return(
-    <div className="background" style={{display:"flex", flexDirection:"column"}}>
+    <div className="background">
       <Header/>
-    <div className="register_container card" style={{width: "50%"}}>
+    <div className="register_container card" style={{width: "50%", marginTop:"2%"}}>
         <div className="header" style={{display: "flex",flexDirection: "row", justifyContent: "space-between"}}>
           <span className="text" style={{flexGrow:"1"}}>SignUp</span> 
           <div style={{display: "flex",flexDirection: "row", justifySelf: "end", alignSelf: "start" }}>
@@ -95,8 +95,8 @@ const Register = () => {
           <input className="submit" type="submit" value="Register"/>
         </div>
       </form>
-      </div>
-      </div>
+    </div>
+    </div>
   )
 }
 
