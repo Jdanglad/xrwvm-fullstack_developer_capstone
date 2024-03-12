@@ -2,7 +2,6 @@ import React from 'react';
 import "../assets/style.css";
 import "../assets/bootstrap.min.css";
 
-
 const Header = () => {
     const logout = async (e) => {
     e.preventDefault();
@@ -32,26 +31,10 @@ let curr_user = sessionStorage.getItem('username')
 
 //If the user is logged in, show the username and logout option on home page
 if ( curr_user !== null &&  curr_user !== "") {
-    //home_page_items = <div className="input_panel">
-    //  <text className="username text-white">{sessionStorage.getItem("username")}</text>
-    //<h5><a className="nav_item text-white" href="/djangoapp/logout" onClick={logout}>Logout</a></h5>
-    //</div>
-    //home_page_items = <div class="dropdown">
-    //    <button class='btn btn-secondary dropdown-toggle' type='button' data-bs-toggle='dropdown' aria-expanded='false'>
-    //      {sessionStorage.getItem("username")}
-    //    </button>
-    //    <ul class='drodown-menu'>
-    //      <li><a class='dropdown-item' href='/djangoapp/logout'>Logout</a></li>
-    //    </ul>
-    //</div>
-    home_page_items = <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-  {sessionStorage.getItem("username")}
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="/djangoapp/logout">Action</a></li>
-  </ul>
-</div>
+    home_page_items = <div>
+      <h5 className="nav-item text-white">{sessionStorage.getItem("username")}</h5>
+      <a className="btn nav-item text-white" href="/djangoapp/logout" onClick={logout}>Logout</a>
+    </div>
 }
     return (
         <div class="background">
@@ -73,11 +56,9 @@ if ( curr_user !== null &&  curr_user !== "") {
                     <a class="nav-link text-secondary" style={{fontSize: "larger"}} href="/contact">Contact Us</a>
                   </li>
                 </ul>
-                <span class="navbar-text">
-                  <div class="loginlink" id="loginlogout">
+                <div>
                   {home_page_items}
-                  </div>
-                  </span>
+                </div>
               </div>
             </div>
           </nav>
