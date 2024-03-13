@@ -5,7 +5,8 @@ import Header from '../Header/Header';
 import user_icon from "../assets/person.png"
 import email_icon from "../assets/email.png"
 import password_icon from "../assets/password.png"
-import close_icon from "../assets/close.png"
+import { IconSquareX, IconUser, IconMail, IconPassword } from '@tabler/icons-react';
+
 
 const Register = () => {
 
@@ -53,46 +54,37 @@ const Register = () => {
   return(
     <div className="background">
       <Header/>
-    <div className="register_container card" style={{width: "50%", marginTop:"2%"}}>
-        <div className="header" style={{display: "flex",flexDirection: "row", justifyContent: "space-between"}}>
-          <span className="text" style={{flexGrow:"1"}}>SignUp</span> 
-          <div style={{display: "flex",flexDirection: "row", justifySelf: "end", alignSelf: "start" }}>
-          <a href="/" onClick={()=>{gohome()}} style={{justifyContent: "space-between", alignItems:"flex-end"}}>
-            <img style={{width:"1cm"}} src={close_icon} alt="X"/>
-          </a>
-          </div>
-          <hr/>
-        </div>
-
+    <div className="register_container card d-flex justify-content-evenly flex-column bg-light mb-3" style={{width: "50%", marginTop:"2%"}}>
+        <h1 className="text-dark mb-4 mt-3" style={{margin:"auto"}}>SignUp</h1>
         <form onSubmit={register}>
-        <div className="inputs">
-          <div className="input">
-            <img src={user_icon} className="img_icon" alt='Username'/>
-            <input type="text"  name="username" placeholder="Username" className="input_field" onChange={(e) => setUserName(e.target.value)}/>
+        <div className="d-flex justify-content-evenly flex-column" style={{width:"25vw", height:"25vw", margin:"auto"}}>
+          <div class="d-flex justify-content-evenly">
+            <IconUser stroke={2} class="text-secondary me-3" height="48" width={48} />
+            <input type="text"  name="username" placeholder="Username" className="form-control" onChange={(e) => setUserName(e.target.value)}/>
           </div>
-          <div>
-            <img src={user_icon} className="img_icon" alt='First Name'/>
-            <input type="text"  name="first_name" placeholder="First Name" className="input_field" onChange={(e) => setFirstName(e.target.value)}/>
-          </div>
-
-          <div>
-            <img src={user_icon} className="img_icon" alt='Last Name'/>
-            <input type="text"  name="last_name" placeholder="Last Name" className="input_field" onChange={(e) => setlastName(e.target.value)}/>
+          <div class="d-flex justify-content-evenly">
+            <IconUser stroke={2} class="text-secondary me-3" height="48" width={48} />
+            <input type="text"  name="first_name" placeholder="First Name" className="form-control" onChange={(e) => setFirstName(e.target.value)}/>
           </div>
 
-          <div>
-            <img src={email_icon} className="img_icon" alt='Email'/>
-            <input type="email"  name="email" placeholder="email" className="input_field" onChange={(e) => setEmail(e.target.value)}/>
+          <div class="d-flex justify-content-evenly">
+            <IconUser stroke={2} class="text-secondary me-3" height="48" width={48} />
+            <input type="text"  name="last_name" placeholder="Last Name" className="form-control" onChange={(e) => setlastName(e.target.value)}/>
           </div>
 
-          <div className="input">
-            <img src={password_icon} className="img_icon" alt='password'/>
-            <input name="psw" type="password"  placeholder="Password" className="input_field" onChange={(e) => setPassword(e.target.value)}/>
+          <div class="d-flex justify-content-evenly">
+            <IconMail stroke={2} class="text-secondary me-3" height="48" width="48" />
+            <input type="email"  name="email" placeholder="email" className="form-control" onChange={(e) => setEmail(e.target.value)}/>
+          </div>
+
+          <div class="d-flex justify-content-evenly">
+            <IconPassword stroke={2} class="text-secondary me-3" height={48} width={48} />
+            <input name="psw" type="password"  placeholder="Password" className="form-control" onChange={(e) => setPassword(e.target.value)}/>
           </div>
 
         </div>
-        <div className="submit_panel">
-          <input className="submit" type="submit" value="Register"/>
+        <div className="submit_panel m-4">
+          <input className="btn text-white" type="submit" value="Register" style={{backgroundColor:"#446B4A", width:"25vw", margin:"auto"}}/>
         </div>
       </form>
     </div>
