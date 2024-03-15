@@ -10,7 +10,7 @@
 
 const logout = async (e) => {
 //Include the code for logout here.
-let logout_url = window.location.origin+"/djangoapp/logout";
+  let logout_url = window.location.origin+"/djangoapp/logout";
   const res = await fetch(logout_url, {
     method: "GET",
   });
@@ -32,13 +32,16 @@ let checkSession = ()=>{
   let curr_user = sessionStorage.getItem("username");
 
   if (curr_user && curr_user !== "") {
-    document.getElementById("loginlogout").innerHTML = 
-    '<span class="homepage_links">' + curr_user +'</span>' +
-    '<a class="homepage_links text-white" onclick="logout()" href="/">Logout</a>'
+    document.getElementById("loginlogout").innerHTML = '<div class="input_panel">' +
+      '<h5 class="nav-item text-white">' + curr_user + '</h5>' +
+      '<a class="btn nav-item text-white" href="/" onclick="logout()">Logout</a>' +
+    '</div>'
   } else {
-    document.getElementById("loginlogout").innerHTML = 
-    '<a class="homepage_links text-white" href="/login">Login</a>'+
-    '<a class="homepage_links text-white"  href="/register">Register</a>'
+    document.getElementById("loginlogout").innerHTML = '<div class="navbar-nav">' +
+                '<h5><a class="nav-link text-white" href="/login">Login</a></h5>' +
+                '<h3 class="text-secondary">|</h3>' +
+                '<h5><a class="nav-link text-white" href="/register">Register</a></h5>' +
+                '</div>'
   }
  }
 </script>
@@ -51,8 +54,8 @@ let checkSession = ()=>{
      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
      </button>
-     <div class="collapse navbar-collapse" id="navbarText">
-       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+     <div class="collapse navbar-collapse d-flex" id="navbarText">
+       <ul class="navbar-nav me-auto">
          <li class="nav-item">
            <a class="nav-link active text-white" style="font-size: larger;" aria-current="page" href="#">Home</a>
          </li>
@@ -64,18 +67,7 @@ let checkSession = ()=>{
          </li>
         </ul>
         <span class="navbar-text">
-          <div class="collapse navbar-collapse">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <h5><a class="nav-link text-white" href="/login">Login</a></h5>
-              </li>
-              <li class="nav-item position-relative text-secondary">
-                <h3>|</h3>
-              </li>
-              <li class="nav-item">
-                <h5><a class="nav-link text-white" href="/register">Register</a></h5>
-              </li>
-            </ul>
+          <div class="" id="loginlogout">
           </div>
         </span>
      </div>
@@ -85,7 +77,7 @@ let checkSession = ()=>{
  <div class="card bg-light" style="width: 50vw; margin-top:2.3%; align-self: center;">
    <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/5208/production/_128000012_merc-benz-ayl-010.jpg" class="card-img-top" alt="...">
    <div class="banner p-3">
-     <h5>Welcome to our Dealerships!</h5>
+     <h5>Welcome to our Charons Tour!</h5>
      <a href="/dealers" class="btn p-3 wrapt-text text-white" style="background-color: #446B4A;margin:10px">View Dealerships</a>
    </div>
  </div>

@@ -2,10 +2,10 @@
 import React, { useState } from "react";
 import "./Register.css";
 import Header from '../Header/Header';
-import user_icon from "../assets/person.png"
-import email_icon from "../assets/email.png"
-import password_icon from "../assets/password.png"
-import { IconSquareX, IconUser, IconMail, IconPassword } from '@tabler/icons-react';
+//import user_icon from "../assets/person.png"
+//import email_icon from "../assets/email.png"
+//import password_icon from "../assets/password.png"
+import { IconUser, IconMail, IconPassword } from '@tabler/icons-react';
 
 
 const Register = () => {

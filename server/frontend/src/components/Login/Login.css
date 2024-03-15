@@ -9,6 +9,14 @@
   align-items: flex-start;
 }
 
+.login_container{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    min-width: 350px;
+    width: 30%;
+}
+
 .background{
     display: flex;
     flex-direction: column;
@@ -61,6 +69,12 @@
   margin: .5cm;
 }
 
+.submit_panel{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
 .submit:hover {
   background-color: wheat;
 }
@@ -92,3 +106,4 @@
   vertical-align: middle;
   
 }
+

@@ -31,8 +31,8 @@ let curr_user = sessionStorage.getItem('username')
 
 //If the user is logged in, show the username and logout option on home page
 if ( curr_user !== null &&  curr_user !== "") {
-    home_page_items = <div class="input_panel">
-      <h5 className="nav-item text-white">{sessionStorage.getItem("username")}</h5>
+    home_page_items = <div class="input_panel text-white">
+      <h5 className="nav-item">{sessionStorage.getItem("username")}</h5>
       <a className="btn nav-item text-white" href="/djangoapp/logout" onClick={logout}>Logout</a>
     </div>
 
