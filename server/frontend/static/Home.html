@@ -32,12 +32,12 @@ let checkSession = ()=>{
   let curr_user = sessionStorage.getItem("username");
 
   if (curr_user && curr_user !== "") {
-    document.getElementById("loginlogout").innerHTML =  '<div class="dropdown">' +
-    '<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' +
+    document.getElementById("loginlogout").innerHTML =  '<div class="btn-group">' +
+    '<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">' +
       curr_user + 
     '</button>' +
-    '<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">' +
-      '<li><a class="dropdown-item" href="/djangoapp/logout" onClick="logout()">Action</a></li>' +
+    '<ul class="dropdown-menu dropdown-menu-lg-end">' +
+      '<li><a class="dropdown-item" href="/djangoapp/logout" onClick="logout()">Logout</a></li>' +
     '</ul>' +
     '</div>'
   } else {
@@ -50,7 +50,7 @@ let checkSession = ()=>{
  }
 </script>
 </head>
-<body onload="checkSession()">
+<body onload="checkSession()" >
 <div class="background">
  <nav class="bar navbar navbar-expand-lg navbar-light text-white">
    <div class="container-fluid">
@@ -77,8 +77,8 @@ let checkSession = ()=>{
      </div>
    </div>
  </nav>
- <div style="display: flex;flex-direction: column; margin-botton:50%;">
- <div class="card bg-light" style="width: 50vw; margin-top:2.3%; align-self: center;">
+ <div style="display: flex;flex-direction: column;">
+ <div class="card bg-light" style="width: 50vw; margin:2.3%; align-self: center;">
    <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/5208/production/_128000012_merc-benz-ayl-010.jpg" class="card-img-top" alt="...">
    <div class="banner p-3">
      <h5>Welcome to our Charons Tour!</h5>
