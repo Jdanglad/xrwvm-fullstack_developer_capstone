@@ -32,9 +32,13 @@ let checkSession = ()=>{
   let curr_user = sessionStorage.getItem("username");
 
   if (curr_user && curr_user !== "") {
-    document.getElementById("loginlogout").innerHTML = '<div class="input_panel">' +
-      '<h5 class="nav-item text-white">' + curr_user + '</h5>' +
-      '<a class="btn nav-item text-white" href="/" onclick="logout()">Logout</a>' +
+    document.getElementById("loginlogout").innerHTML =  '<div class="dropdown">' +
+    '<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' +
+      curr_user + 
+    '</button>' +
+    '<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">' +
+      '<li><a class="dropdown-item" href="/djangoapp/logout" onClick="logout()">Action</a></li>' +
+    '</ul>' +
     '</div>'
   } else {
     document.getElementById("loginlogout").innerHTML = '<div class="navbar-nav">' +
