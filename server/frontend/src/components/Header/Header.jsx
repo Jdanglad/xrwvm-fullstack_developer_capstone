@@ -31,19 +31,19 @@ let curr_user = sessionStorage.getItem('username')
 
 //If the user is logged in, show the username and logout option on home page
 if ( curr_user !== null &&  curr_user !== "") {
-    //home_page_items = <div class="input_panel text-white">
-    //  <h5 className="nav-item">{sessionStorage.getItem("username")}</h5>
-    //  <a className="btn nav-item text-white" href="/djangoapp/logout" onClick={logout}>Logout</a>
-    //</div>
-
-    home_page_items = <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-      {sessionStorage.getItem("username")}
-    </button>
-    <ul class="dropdown-menu dropdown-menu-lg-end">
-      <li><a class="dropdown-item" href="/djangoapp/logout" onClick={logout}>Logout</a></li>
-    </ul>
+    home_page_items = <div class="input_panel text-white">
+      <h5 className="nav-item">{sessionStorage.getItem("username")}</h5>
+      <a className="btn nav-item text-white" href="/djangoapp/logout" onClick={logout}>Logout</a>
     </div>
+
+    //home_page_items = <div class="dropdown">
+    //<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+    //  {sessionStorage.getItem("username")}
+    //</button>
+    //<ul class="dropdown-menu dropdown-menu-lg-end">
+    //  <li><a class="dropdown-item" href="/djangoapp/logout" onClick={logout}>Logout</a></li>
+    //</ul>
+    //</div>
 }
     return (
         <div class="background">
