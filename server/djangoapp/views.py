@@ -88,12 +88,12 @@ def get_cars(request):
     return JsonResponse({"CarModels":cars})
 
 
-def get_dealerships(request, state="ALL"):
-    if (state == "ALL"):
+def get_dealerships(request, state="All"):
+    if (state == "All"):
         endpoint = "/fetchDealers"
     else:
         endpoint = "/fetchDealers/"+state
-    dealerships = get_request(endopoint)
+    dealerships = get_request(endpoint)
     return JsonResponse({"status":200, "dealers":dealerships})
 
 
