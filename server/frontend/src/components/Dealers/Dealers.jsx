@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "./Dealers.css";
 import "../assets/style.css";
+import "../assets/bootstrap.min.css";
 import Header from '../Header/Header';
 import review_icon from "../assets/reviewicon.png"
 
@@ -53,12 +54,13 @@ return(
       <Header/>
 
      <table className='table'>
+      <thead>
       <tr>
-      <th>ID</th>
-      <th>Dealer Name</th>
-      <th>City</th>
-      <th>Address</th>
-      <th>Zip</th>
+      <th scope="col">ID</th>
+      <th scope="col">Dealer Name</th>
+      <th scope="col">City</th>
+      <th scope="col">Address</th>
+      <th scope="col">Zip</th>
       <th>
       <select name="state" id="state" onChange={(e) => filterDealers(e.target.value)}>
       <option value="" selected disabled hidden>State</option>
@@ -74,10 +76,12 @@ return(
          ):<></>
       }
       </tr>
+      </thead>
+      <tbody>
      {dealersList.map(dealer => (
         <tr>
-          <td>{dealer['id']}</td>
-          <td><a href={'/dealer/'+dealer['id']}>{dealer['full_name']}</a></td>
+          <th scope='row'>{dealer['id']}</th>
+          <td><h4><a href={'/dealer/'+dealer['id']}>{dealer['full_name']}</a></h4></td>
           <td>{dealer['city']}</td>
           <td>{dealer['address']}</td>
           <td>{dealer['zip']}</td>
@@ -88,6 +92,7 @@ return(
           }
         </tr>
       ))}
+      </tbody>
      </table>;
   </div>
 )
