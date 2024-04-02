@@ -44,44 +44,44 @@ const Dealers = () => {
     }
   }
   useEffect(() => {
-    get_dealers();
+get_dealers();
   },[]);  
 
 
 let isLoggedIn = sessionStorage.getItem("username") != null ? true : false;
 return(
-  <div>
+  <div className='background'>
       <Header/>
 
-     <table className='table'>
+     <table className='table table-hover table-column'>
       <thead>
-      <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Dealer Name</th>
-      <th scope="col">City</th>
-      <th scope="col">Address</th>
-      <th scope="col">Zip</th>
-      <th>
-      <select name="state" id="state" onChange={(e) => filterDealers(e.target.value)}>
-      <option value="" selected disabled hidden>State</option>
-      <option value="All">All States</option>
-      {states.map(state => (
-          <option value={state}>{state}</option>
-      ))}
-      </select>        
-
-      </th>
-      {isLoggedIn ? (
-          <th>Review Dealer</th>
-         ):<></>
-      }
-      </tr>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Dealer Name</th>
+          <th scope="col">City</th>
+          <th scope="col">Address</th>
+          <th scope="col">Zip</th>
+          <th>
+          <select name="state" id="state" className='bg-light' onChange={(e) => filterDealers(e.target.value)}>
+          <option value="" className='bg-light' selected disabled hidden>State</option>
+          <option value="All" className='bg-light'>All States</option>
+          {states.map(state => (
+              <option value={state}>{state}</option>
+          ))}
+          </select>        
+          
+          </th>
+          {isLoggedIn ? (
+              <th>Review Dealer</th>
+             ):<></>
+          }
+        </tr>
       </thead>
       <tbody>
      {dealersList.map(dealer => (
         <tr>
-          <th scope='row'>{dealer['id']}</th>
-          <td><h4><a href={'/dealer/'+dealer['id']}>{dealer['full_name']}</a></h4></td>
+          <th scope='row pe-4'>{dealer['id']}</th>
+          <td><a href={'/dealer/'+dealer['id']}>{dealer['full_name']}</a></td>
           <td>{dealer['city']}</td>
           <td>{dealer['address']}</td>
           <td>{dealer['zip']}</td>
