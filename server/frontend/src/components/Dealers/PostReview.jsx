@@ -3,11 +3,12 @@ import { useParams } from 'react-router-dom';
 import "./Dealers.css";
 import "../assets/style.css";
 import Header from '../Header/Header';
+import "../assets/bootstrap.min.css";
 
 
 const PostReview = () => {
   const [dealer, setDealer] = useState({});
-  const [review, setReview] = useState("");
+  const [review, setReview] = useState(""); 
   const [model, setModel] = useState();
   const [year, setYear] = useState("");
   const [date, setDate] = useState("");
@@ -109,7 +110,7 @@ const PostReview = () => {
       </select>        
       </div >
 
-      <div className='input_field'>
+      <div className='input-text'>
       Car Year <input type="int" onChange={(e) => setYear(e.target.value)} max={2023} min={2015}/>
       </div>
 
