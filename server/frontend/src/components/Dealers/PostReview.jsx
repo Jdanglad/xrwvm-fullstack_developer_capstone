@@ -92,32 +92,36 @@ const PostReview = () => {
 
 
   return (
-    <div>
+    <div className='background'>
       <Header/>
-      <div  style={{margin:"5%"}}>
-      <h1 style={{color:"darkblue"}}>{dealer.full_name}</h1>
-      <textarea id='review' cols='50' rows='7' onChange={(e) => setReview(e.target.value)}></textarea>
-      <div className='input_field'>
-      Purchase Date <input type="date" onChange={(e) => setDate(e.target.value)}/>
+      <div className='card bg-light' style={{margin:"5%", display:"flex", flexDirection:"column",}}>
+        <h1 className='pt-3 d-flex justify-content-evenly' style={{color:"darkblue"}}>{dealer.full_name}</h1>
+        <textarea className='m-3 input_field' id='review' cols='50' rows='7' onChange={(e) => setReview(e.target.value)}></textarea>
+        <div className='input-group'>
+            <span className='input-group-text' id='purchase-date'>Purchase date</span>
+            <input className='form-control' type="date" onChange={(e) => setDate(e.target.value)}/>
+        </div>
+        <div className='input-group mb3'>
+            <span className='input-group-text' id='car-model'>Car model</span> 
+            <select name="cars" id="cars" onChange={(e) => setModel(e.target.value)}>
+              <div>
+              <option value="" selected disabled hidden>Choose car model</option>
+              {carmodels.map(carmodel => (
+                  <option value={carmodel.CarMake+" "+carmodel.CarModel}>{carmodel.CarMake} {carmodel.CarModel}</option>
+              ))}
+              </div>
+            </select>        
+        </div>
+  
+        <div className='input-group mb3'>
+            <span className='input-group-text' id='car-year'>Car Year</span>
+            <input type="text" className='form-control' placeholder='Car year' aria-aria-label='car-year-input' aria-describedby='car-year' onChange={(e) => setYear(e.target.value)} max={2023} min={2015}/>
+        </div>
+  
+        <div>
+        <button className='btn' style={{backgroundColor:"#446B4A"}} onClick={postreview}>Post Review</button>
+        </div>
       </div>
-      <div className='input_field'>
-      Car Make 
-      <select name="cars" id="cars" onChange={(e) => setModel(e.target.value)}>
-      <option value="" selected disabled hidden>Choose Car Make and Model</option>
-      {carmodels.map(carmodel => (
-          <option value={carmodel.CarMake+" "+carmodel.CarModel}>{carmodel.CarMake} {carmodel.CarModel}</option>
-      ))}
-      </select>        
-      </div >
-
-      <div className='input-text'>
-      Car Year <input type="int" onChange={(e) => setYear(e.target.value)} max={2023} min={2015}/>
-      </div>
-
-      <div>
-      <button className='postreview' onClick={postreview}>Post Review</button>
-      </div>
-    </div>
     </div>
   )
 }
