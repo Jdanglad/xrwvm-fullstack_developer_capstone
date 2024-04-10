@@ -94,16 +94,16 @@ const PostReview = () => {
   return (
     <div className='background' >
       <Header/>
-      <div className='card bg-light d-flex justify-content-evenly flex-column' style={{margin:"3%", width:'60vw', display:"flex", flexDirection:"column",}}>
-        <h1 className='pt-3 mb-3' style={{color:"darkblue"}}>{dealer.full_name}</h1>
-        <div style={{width:'80%'}}>
+      <div className='card bg-light d-flex justify-content-evenly flex-column' style={{margin:"auto", width:'60vw', display:"flex", flexDirection:"column",}}>
+        <h1 className='pt-3 mb-3' style={{color:"darkblue", margin:"auto"}}>{dealer.full_name}</h1>
+        <div style={{width:'80%', margin:"auto"}}>
         <textarea className='mb-3 form-control' id='review' rows='7' onChange={(e) => setReview(e.target.value)}></textarea>
         </div>
-        <div className='input-group mb-3' style={{width:'80%'}}>
+        <div className='input-group mb-3' style={{width:'80%', margin:"auto"}}>
             <span className='input-group-text' id='purchase-date'>Purchase date</span>
             <input className='form-control' type="date" onChange={(e) => setDate(e.target.value)}/>
         </div>
-        <div className='input-group mb-3' style={{width:'80%'}} >
+        <div className='input-group mb-3' style={{width:'80%', margin:"auto"}} >
             <span className='input-group-text'>Car model</span> 
             <select className='form-control' name="cars" id="cars" style={{width:'70%'}} onChange={(e) => setModel(e.target.value)}>
               <option value="" selected disabled hidden>Choose car model</option>
@@ -113,12 +113,12 @@ const PostReview = () => {
             </select>        
         </div>
   
-        <div className='input-group mb-3' style={{width:'80%'}}>
+        <div className='input-group mb-3' style={{width:'80%', margin:"auto"}}>
             <span className='input-group-text' id='car-year'>Car Year</span>
             <input type="text" className='form-control' placeholder='Car year' aria-aria-label='car-year-input' aria-describedby='car-year' onChange={(e) => setYear(e.target.value)} max={2023} min={2015}/>
         </div>
   
-        <div style={{width:'80%'}}>
+        <div style={{width:'80%', margin:"auto"}}>
         <button className='btn' style={{backgroundColor:"#446B4A"}} onClick={postreview}>Post Review</button>
         </div>
       </div>
