@@ -92,9 +92,9 @@ const PostReview = () => {
 
 
   return (
-    <div className='background' >
+    <div className='background'>
       <Header/>
-      <div className='card bg-light d-flex justify-content-evenly flex-column' style={{margin:"auto", width:'60vw', display:"flex", flexDirection:"column",}}>
+      <div className='card bg-light d-flex justify-content-evenly flex-column mt-4' style={{margin:"auto", width:'60vw', marginBottom:'4%'}}>
         <h1 className='pt-3 mb-3' style={{color:"darkblue", margin:"auto"}}>{dealer.full_name}</h1>
         <div style={{width:'80%', margin:"auto"}}>
         <textarea className='mb-3 form-control' id='review' rows='7' onChange={(e) => setReview(e.target.value)}></textarea>
@@ -113,14 +113,12 @@ const PostReview = () => {
             </select>        
         </div>
   
-        <div className='input-group mb-3' style={{width:'80%', margin:"auto"}}>
+        <div className='input-group mb-4' style={{width:'80%', margin:"auto"}}>
             <span className='input-group-text' id='car-year'>Car Year</span>
             <input type="text" className='form-control' placeholder='Car year' aria-aria-label='car-year-input' aria-describedby='car-year' onChange={(e) => setYear(e.target.value)} max={2023} min={2015}/>
         </div>
   
-        <div style={{width:'80%', margin:"auto"}}>
-        <button className='btn' style={{backgroundColor:"#446B4A"}} onClick={postreview}>Post Review</button>
-        </div>
+        <button className='btn text-white p-2' style={{width:'50%', backgroundColor:"#446B4A", margin:'auto', marginBottom:'0.5in'}} onClick={postreview}>Post Review</button>
       </div>
     </div>
   )

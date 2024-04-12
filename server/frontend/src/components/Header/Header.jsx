@@ -46,7 +46,7 @@ if ( curr_user !== null &&  curr_user !== "") {
     //</div>
 }
     return (
-        <div class="background">
+        <div>
           <nav class="bar navbar navbar-expand-lg navbar-light text-white" style={{height:"1in"}}>
             <div class="container-fluid">
               <h2 style={{paddingRight:"5%"}}><a class="nav-link text-white" href="/">Charons Tour</a></h2>

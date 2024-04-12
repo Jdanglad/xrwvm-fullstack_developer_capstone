@@ -3,7 +3,8 @@ import "./Dealers.css";
 import "../assets/style.css";
 import "../assets/bootstrap.min.css";
 import Header from '../Header/Header';
-import review_icon from "../assets/reviewicon.png"
+import { IconBubbleText } from '@tabler/icons-react';
+//import review_icon from "../assets/reviewicon.png"
 
 const Dealers = () => {
   const [dealersList, setDealersList] = useState([]);
@@ -87,7 +88,7 @@ return(
           <td className='text-center'>{dealer['zip']}</td>
           <td className='text-center'>{dealer['state']}</td>
           {isLoggedIn ? (
-            <td className='text-center'><a href={`/postreview/${dealer['id']}`}><img src={review_icon} className="review_icon" alt="Post Review"/></a></td>
+            <td className='text-center'><a href={`/postreview/${dealer['id']}`}><IconBubbleText stroke={2} style={{width:'32', height:'32'}} /></a></td>
            ):<></>
           }
         </tr>

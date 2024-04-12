@@ -5,8 +5,9 @@ import "../assets/style.css";
 import positive_icon from "../assets/positive.png"
 import neutral_icon from "../assets/neutral.png"
 import negative_icon from "../assets/negative.png"
-import review_icon from "../assets/reviewbutton.png"
+//import review_icon from "../assets/reviewbutton.png"
 import Header from '../Header/Header';
+import { IconBubbleText } from '@tabler/icons-react'
 
 const Dealer = () => {
 
@@ -61,7 +62,7 @@ const Dealer = () => {
     get_reviews();
     if(sessionStorage.getItem("username")) {
       setPostReview(<a href={post_review}>
-          <img src={review_icon} style={{width:'10%',marginLeft:'10px',marginTop:'10px'}} alt='Post Review'/>
+          < IconBubbleText style={{marginLeft:'20px', height:'64', width:'64'}} stroke={2} />
         </a>)
     }
   },[]);  
@@ -70,7 +71,7 @@ const Dealer = () => {
 return(
   <div className='background'>
       <Header/>
-      <div style={{marginTop:"10px"}}>
+      <div style={{marginTop:"3%", marginLeft:'3%'}}>
       <h1 style={{color:"grey"}}>{dealer.full_name}{postReview}</h1>
       <h4  style={{color:"grey"}}>{dealer['city']},{dealer['address']}, Zip - {dealer['zip']}, {dealer['state']} </h4>
       </div>
@@ -79,10 +80,10 @@ return(
         <text>Loading Reviews....</text>
       ):  unreviewed === true? <div>No reviews yet! </div> :
       reviews.map(review => (
-        <div className='review_panel'>
+        <div className='card d-flex justify-content-evenly flex-column bg-light' style={{height:'7cm', width:'6cm'}}>
           <img src={senti_icon(review.sentiment)} className="emotion_icon" alt='Sentiment'/>
-          <div className='review'>{review.review}</div>
-          <div className="reviewer">{review.name} {review.car_make} {review.car_model} {review.car_year}</div>
+          <div className='review' style={{margin:'auto'}}>{review.review}</div>
+          <div className="reviewer" style={{margin:'auto', marginTop:'3cm'}}>{review.name} {review.car_make} {review.car_model} {review.car_year}</div>
         </div>
       ))}
     </div>  

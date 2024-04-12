@@ -13,6 +13,7 @@ img{
     background-repeat: no-repeat;
     background-position: relative;
     min-width: 100dvw;
+    min-height: 100dvh;
 }
 
 .bar{
