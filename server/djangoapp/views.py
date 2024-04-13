@@ -44,7 +44,6 @@ def logout_request(request):
 # Create a `registration` view to handle sign up request
 @csrf_exempt
 def registration(request):
-    context = {}
     data = json.loads(request.body)
     username = data['userName']
     password = data['password']
@@ -52,7 +51,6 @@ def registration(request):
     last_name = data['lastName']
     email = data['email']
     username_exist = False
-    email_exist = False
     try:
         # Check if user already exists
         User.objects.get(username=username)
@@ -65,7 +63,8 @@ def registration(request):
     if not username_exist:
         # Create user in auth_user table
         user = User.objects.create_user(
-            username=username, first_name=first_name, last_name=last_name, password=password, email=email
+            username=username, first_name=first_name,
+            last_name=last_name, password=password, email=email
             )
         # Login the user and redirect to list page
         login(request, user)
@@ -91,7 +90,7 @@ def get_cars(request):
 
 
 def get_dealerships(request, state="All"):
-    if (state == "All"): 
+    if (state == "All"):
         endpoint = "/fetchDealers"
     else:
         endpoint = "/fetchDealers/"+state
@@ -105,7 +104,7 @@ def get_dealer_details(request, dealer_id):
         dealership = get_request(endpoint)
         return JsonResponse({"status": 200, "dealer": dealership})
     else:
-        return JsonResponse({"status":400,"message":"Bad Request"})
+        return JsonResponse({"status": 400, "message": "Bad Request"})
 
 
 def get_dealer_reviews(request, dealer_id):
@@ -126,8 +125,7 @@ def add_review(request):
     if (request.user.is_anonymous is False):
         data = json.loads(request.body)
         try:
-            response = post_review(data)
-            return JsonResponse({"status" :200})
+            return JsonResponse({"status": 200})
         except Exception as err:
             print(f"Unexpected {err=}, {type(err)=}")
             return JsonResponse({

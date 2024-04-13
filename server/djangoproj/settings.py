@@ -91,22 +91,24 @@ DATABASES = {
     }
 }
 
+
+pass_val = "django.contrib.auth.password_validation"
 AUTH_PASSWORD_VALIDATORS = [
     {
-    'NAME':
-    'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME':
+        pass_val+'.UserAttributeSimilarityValidator',
     },
     {
-    'NAME':
-    'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME':
+        pass_val+'.MinimumLengthValidator',
     },
     {
-    'NAME':
-    'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME':
+        pass_val+'.CommonPasswordValidator',
     },
     {
-    'NAME':
-    'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME':
+        pass_val+'.NumericPasswordValidator',
     },
 ]
 
@@ -143,7 +145,11 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend/build'),
     os.path.join(BASE_DIR, 'frontend/build/static'),
 ]
-ALLOWED_HOSTS = ['localhost', 'https://dangladjose-8000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai']
+root_url = "https://dangladjose-8000."
+end_url = "proxy.cognitiveclass.ai"
+ALLOWED_HOSTS = [
+    'localhost',
+    root_url+'theianext-1-labs-prod-misc-tools-us-east-0.'+end_url]
 CSRF_TRUSTED_ORIGINS = [
-    'https://dangladjose-8000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai', 
-    'https://dangladjose-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai']
+    root_url+'theianext-1-labs-prod-misc-tools-us-east-0.'+end_url,
+    root_url+'theiadockernext-0-labs-prod-theiak8s-4-tor01.'+end_url]
