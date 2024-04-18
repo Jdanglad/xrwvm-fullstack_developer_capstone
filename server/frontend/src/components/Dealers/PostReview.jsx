@@ -117,7 +117,6 @@ const PostReview = () => {
             <span className='input-group-text' id='car-year'>Car Year</span>
             <input type="text" className='form-control' placeholder='Car year' aria-aria-label='car-year-input' aria-describedby='car-year' onChange={(e) => setYear(e.target.value)} max={2023} min={2015}/>
         </div>
-  
         <button className='btn text-white p-2' style={{width:'50%', backgroundColor:"#446B4A", margin:'auto', marginBottom:'0.5in'}} onClick={postreview}>Post Review</button>
       </div>
     </div>
